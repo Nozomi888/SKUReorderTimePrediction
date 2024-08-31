@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict SKU Reorder Time</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <div class="container text-center">
+    <h1>Predict SKU Reorder Time</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.avg_daily_sales.label }}<br>
+            {{ form.avg_daily_sales(size=20) }}
+        </p>
+        <p>
+            {{ form.current_stock.label }}<br>
+            {{ form.current_stock(size=20) }}
+        </p>
+        <p>
+            {{ form.lead_time_days.label }}<br>
+            {{ form.lead_time_days(size=20) }}
+        </p>
+        <p>
+            {{ form.demand_variability.label }}<br>
+            {{ form.demand_variability(size=20) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</div>
+</body>
+</html>
